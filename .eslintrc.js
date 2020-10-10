@@ -17,7 +17,7 @@ module.exports = {
     'no-shadow': ['error', { allow: ['state', 'err', 'error'] }],
     'class-methods-use-this': 1,
     'no-param-reassign': ['error', { 'props': true, 'ignorePropertyModificationsFor': ['column', 'state'] }],
-    'no-explicit-any': 0,
+    "no-any": false,
   },
   overrides: [
     {

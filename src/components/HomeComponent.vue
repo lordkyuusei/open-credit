@@ -49,7 +49,6 @@ export default class HomeComponent extends Vue {
   event!: string;
 
   handleClick(event: string) {
-    console.log(event);
     this.event = event;
   }
 }

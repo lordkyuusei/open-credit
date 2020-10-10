@@ -27,7 +27,7 @@ export default class BorrowerComponent extends Vue {
   cards = 5;
 
   handleClick() {
-    console.log(this);
+    this.cards += 1;
   }
 }
 </script>

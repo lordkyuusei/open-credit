@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import Types from '@/store/glossary';
 
@@ -35,14 +36,12 @@ const actions = {
   connect({ commit }: { commit: any }, { account }: { account: [string, string]}) {
     axios
       .get(Types.e.CONNECT_ACCOUNT)
-      .then((response: any) => {
-        const { loggedAccount } = response;
+      .then(() => {
         [
           { type: Types.m.MUTATE_ACCOUNT, account },
           { type: Types.m.MUTATE_CONNECTED, isConnected: true },
         ].map((opt) => commit(opt));
-      }).catch((error: any) => {
-        const { loggedAccount } = error;
+      }).catch(() => {
         [
           { type: Types.m.MUTATE_ACCOUNT, account },
           { type: Types.m.MUTATE_CONNECTED, isConnected: true },

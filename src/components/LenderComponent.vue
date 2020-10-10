@@ -27,7 +27,7 @@ export default class LenderComponent extends Vue {
   cards = 3;
 
   handleClick() {
-    console.log(this);
+    this.cards += 1;
   }
 }
 </script>
