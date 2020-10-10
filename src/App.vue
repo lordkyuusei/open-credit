@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="content">
-      <NavbarComponent />
+      <NavbarComponent v-if="!isConnectionScreen"/>
       <router-view/>
     </div>
   </div>
@@ -16,7 +16,11 @@ import NavbarComponent from '@/components/NavbarComponent.vue';
     NavbarComponent,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  get isConnectionScreen() {
+    return this.$route.path === '/';
+  }
+}
 </script>
 
 <style lang="scss">
@@ -35,5 +39,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
+}
+#content {
+  height: 100%;
+  width: 100%;
 }
 </style>

@@ -16,7 +16,7 @@
             <router-link to="/account">
                 <vs-avatar primary>
                     <template #text>
-                        Your Name
+                        {{ bankAccount }}
                     </template>
                 </vs-avatar>
             </router-link>
@@ -26,11 +26,24 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { mapGetters } from 'vuex';
 
 @Component({
-  components: {},
+  components: {
+  },
+  computed: {
+    ...mapGetters({
+      account: 'account',
+    }),
+  },
 })
-export default class NavbarComponent extends Vue {}
+export default class NavbarComponent extends Vue {
+    private account!: [string, string]
+
+    get bankAccount() {
+      return this.account[0];
+    }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -12,8 +12,12 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-shadow': ['error', { allow: ['state', 'err', 'error'] }],
+    'class-methods-use-this': 1,
+    'no-param-reassign': ['error', { 'props': true, 'ignorePropertyModificationsFor': ['column', 'state'] }],
+    'no-explicit-any': 0,
   },
   overrides: [
     {

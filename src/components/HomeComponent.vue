@@ -14,13 +14,13 @@
                             <h3>Borrowings</h3>
                         </template>
                         <template #text>
-                            You borrowed <b>1000$</b>. Current total cost: {{ 1000+(1000*(1/100))}}.
+                            Borrowed: <b>1000$</b>. Total cost: {{ 1000+(1000*(1/100))}}.
                         </template>
                     </vs-card>
                 </router-link>
             </v-col>
             <v-col w="2">
-                ,
+                ___
             </v-col>
             <v-col w="2">
                 <router-link :to=" { name: 'Transactions', params: { currentTab: false }}">
@@ -32,7 +32,7 @@
                             <h3>Lendings</h3>
                         </template>
                         <template #text>
-                            You lended <b>6000$</b>. Total yield: {{ 6000 + (1000*(1/100))}}.
+                            Lended: <b>6000$</b>. Total yield: {{ 6000 + (1000*(1/100))}}.
                         </template>
                     </vs-card>
                 </router-link>

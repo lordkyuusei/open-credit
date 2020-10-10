@@ -5,6 +5,11 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
+    path: '/',
+    name: 'Connect & Register',
+    component: () => import('@/views/ConnectRegister.vue'),
+  },
+  {
     path: '/home',
     name: 'Home',
     component: () => import('@/views/HomePage.vue'),
