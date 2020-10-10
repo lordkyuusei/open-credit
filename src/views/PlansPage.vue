@@ -1,22 +1,22 @@
 <template>
   <div>
     <TopbarComponent :componentName="componentName"/>
-    <ImmeubleComponent />
+    <PlansComponent />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import ImmeubleComponent from '@/components/ImmeubleComponent.vue';
+import PlansComponent from '@/components/PlansComponent.vue';
 import TopbarComponent from '@/components/TopbarComponent.vue';
 
 @Component({
   components: {
-    ImmeubleComponent,
+    PlansComponent,
     TopbarComponent,
   },
 })
-export default class ImmeublePage extends Vue {
+export default class PlansPage extends Vue {
   @Prop(String) readonly componentName!: string;
 }
 </script>

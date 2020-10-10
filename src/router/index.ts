@@ -26,11 +26,11 @@ const routes: Array<RouteConfig> = [
     },
   },
   {
-    path: '/immeuble',
-    name: 'Immeuble',
-    component: () => import('@/views/ImmeublePage.vue'),
+    path: '/plans',
+    name: 'Plans',
+    component: () => import('@/views/PlansPage.vue'),
     props: {
-      componentName: 'IMMEUBLE',
+      componentName: 'PLANS',
     },
   },
   {
