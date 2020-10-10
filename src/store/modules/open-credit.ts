@@ -55,8 +55,6 @@ const actions = {
         const { borrowings } = response;
         const opt = { type: Types.m.MUTATE_BORROWINGS, borrowings };
         commit(opt);
-      }).catch((error: any) => {
-        console.error(error);
       });
   },
   getLendings({ commit }: { commit: any }, { accountId }: { accountId: number}) {
@@ -66,8 +64,6 @@ const actions = {
         const { lendings } = response;
         const opt = { type: Types.m.MUTATE_LENDINGS, lendings };
         commit(opt);
-      }).catch((error: any) => {
-        console.error(error);
       });
   },
 };
