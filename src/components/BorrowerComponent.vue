@@ -27,7 +27,7 @@ export default class BorrowerComponent extends Vue {
   cards = 5;
 
   handleClick() {
-    this.cards += 1;
+    this.$router.push({ path: `/detail/${(Math.random() * 100).toPrecision(2)}` });
   }
 }
 </script>

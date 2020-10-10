@@ -9,7 +9,7 @@
         </vs-navbar-item>
         <vs-navbar-item></vs-navbar-item>
         <vs-navbar-item>
-            <router-link to="/immeuble">🏢</router-link>
+            <router-link to="/plans">🏢</router-link>
         </vs-navbar-item>
         <vs-navbar-item></vs-navbar-item>
         <vs-navbar-item>

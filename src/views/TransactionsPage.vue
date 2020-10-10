@@ -63,6 +63,7 @@ export default class TransactionsPage extends Vue {
 button {
   padding: 10px 10px !important;
 }
+
 .transactions-button {
   padding-top: 10px;
   width: 100%;

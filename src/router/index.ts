@@ -26,6 +26,13 @@ const routes: Array<RouteConfig> = [
     },
   },
   {
+    path: '/detail/:id',
+    component: () => import('@/views/TransactionDetail.vue'),
+    props: {
+      componentName: 'DETAILS ABOUT YOUR TRANSACTION',
+    },
+  },
+  {
     path: '/plans',
     name: 'Plans',
     component: () => import('@/views/PlansPage.vue'),
