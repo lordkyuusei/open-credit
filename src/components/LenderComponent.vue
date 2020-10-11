@@ -19,15 +19,31 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Types from '@/store/glossary';
 
 @Component({
   components: {},
+  computed: {},
 })
 export default class LenderComponent extends Vue {
   cards = 3;
 
+  static transactionBuilder(id: string) {
+    return {
+      id: parseInt(id, 10),
+      recipient: ['Kevin POIROT', ''],
+      sender: ['David LAFARGE', ''],
+      amount: 1000,
+      due: Date.now(),
+      interest: 0.01,
+    };
+  }
+
   handleClick() {
-    this.cards += 1;
+    const id = (Math.random() * 100).toPrecision(2);
+    const lendings = LenderComponent.transactionBuilder(id);
+    this.$store.commit({ type: Types.m.MUTATE_LENDINGS, lendings });
+    this.$router.push({ path: `/detail/${id}` });
   }
 }
 </script>

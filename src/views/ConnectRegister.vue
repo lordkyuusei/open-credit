@@ -57,6 +57,8 @@ export default class ConnectRegister extends Vue {
         type: Types.a.CONNECT_ACCOUNT,
         account: [this.bankAccount, this.password],
       });
+      this.$store.dispatch({ type: Types.a.GET_PROVIDERS });
+      this.$store.dispatch({ type: Types.a.GET_ACCESS_TOKEN });
       this.success = true;
       this.$router.push({ name: 'Home' });
     } else {

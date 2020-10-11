@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Types from '@/store/glossary';
 
 @Component({
   components: {},
@@ -26,8 +27,22 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class BorrowerComponent extends Vue {
   cards = 5;
 
+  static transactionBuilder(id: string) {
+    return {
+      id: parseInt(id, 10),
+      recipient: ['Kevin POIROT', ''],
+      sender: ['David LAFARGE', ''],
+      amount: 1000,
+      due: Date.now(),
+      interest: 0.01,
+    };
+  }
+
   handleClick() {
-    this.$router.push({ path: `/detail/${(Math.random() * 100).toPrecision(2)}` });
+    const id = (Math.random() * 100).toPrecision(2);
+    const borrowings = BorrowerComponent.transactionBuilder(id);
+    this.$store.commit({ type: Types.m.MUTATE_BORROWINGS, borrowings });
+    this.$router.push({ path: `/detail/${id}` });
   }
 }
 </script>
