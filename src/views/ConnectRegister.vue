@@ -1,6 +1,6 @@
 <template>
   <div class='connect-register'>
-    <vs-navbar class='connect-navbar'> OPEN CREDIT APP </vs-navbar>
+    <vs-navbar class='connect-navbar'>OPEN CREDIT APP </vs-navbar>
     <vs-row justify='center'>
       <img src='@/assets/undraw_coming_home_52ir.svg' />
     </vs-row>
